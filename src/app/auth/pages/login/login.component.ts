@@ -20,6 +20,10 @@ export class LoginComponent {
         this.router.navigate(['./heroes']);    
       }
     })
-    
+  }
+
+  loginSinLogin(){
+    this.authService.logout();
+    this.router.navigate(['./heroes']);
   }
 }

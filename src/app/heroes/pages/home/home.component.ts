@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../auth/services/auth.service';
 import { Auth } from 'src/app/auth/interfaces/auth.interfaces';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,7 @@ export class HomeComponent {
               private authService: AuthService){}
 
   logout(){
+    this.authService.logout();
     this.router.navigate(['./auth']);
   }
 }
